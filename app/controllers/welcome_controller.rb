@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   def home  
     if logged_in?
-      render "users/show"
+      render "quiz/index"
     end
   end
   

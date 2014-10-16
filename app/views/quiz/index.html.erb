@@ -8,6 +8,9 @@
   <div class="center">
 	 <%= submit_tag "Start!", :class => "submit"%>
   </div>
+  <% if current_user.admin? %>
+     <%= link_to "Questions", questions_path %>
+  <% end %>
 <% end %>
 
 <% content_for(:title) do %>
