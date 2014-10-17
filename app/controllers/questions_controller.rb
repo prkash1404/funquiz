@@ -47,7 +47,7 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to(@question, :notice => 'Question was successfully created.') }
+        format.html { redirect_to(@question )}#, :notice => 'Question was successfully created.') }
         format.xml  { render :xml => @question, :status => :created, :location => @question }
       else
         format.html { render :action => "new" }
@@ -63,7 +63,7 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.update_attributes(question_params)
-        format.html { redirect_to(@question, :notice => 'Question was successfully updated.') }
+        format.html { redirect_to(@question)}#, :notice => 'Question was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
