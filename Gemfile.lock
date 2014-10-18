@@ -41,6 +41,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    countdown (0.1.0)
+      json
     erubis (2.7.0)
     execjs (2.2.2)
     hike (1.2.3)
@@ -130,6 +132,7 @@ DEPENDENCIES
   bootstrap-sass (= 3.2.0.0)
   bootstrap-will_paginate (= 0.0.10)
   coffee-rails (~> 4.0.0)
+  countdown
   jbuilder (~> 2.0)
   jquery-rails
   pg (= 0.17.1)

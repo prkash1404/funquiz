@@ -1,5 +1,6 @@
 class Question < ActiveRecord::Base
    has_many :choices
+   validates :text, presence: true
   
   def answer
    uncorrect

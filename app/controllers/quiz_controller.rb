@@ -1,11 +1,12 @@
 class QuizController < ApplicationController
   
-   before_action :logged_in_user, only: [:index, :question, :end]
+   before_action :logged_in_user, only: [:index, :question, :end, :start]
   
  def index
   end
   
   def start
+    #@begin_time = Time.now
    total = params[:number].to_i
    all = Question.all.map {|x| x.id}
    session[:questions] = all.sort_by{rand}[0..(total-1)]
@@ -13,15 +14,18 @@ class QuizController < ApplicationController
    session[:total]   = total
    session[:current] = 0
    session[:correct] = 0
-   
+   session[:begin_time]=Time.now
+   #puts {Time.now}
    redirect_to :action => "question"
   end
 
   def question
+    @begin_time=session[:begin_time]
+   @end_time= Time.now + 1.minutes
    @current = session[:current]
    @total   = session[:total]
    
-   if @current >= @total
+   if @current >= @total || (@end_time.to_i - @begin_time.to_i) <= (1.minutes).to_i
     redirect_to :action => "end"
     return
    end

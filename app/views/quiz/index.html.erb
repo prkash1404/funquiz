@@ -1,5 +1,5 @@
 <h1>Start Quiz</h1>
-
+<%= @begin_time%>
 <%= form_tag({:controller => "quiz",
 				  :action => "start"}) do %>
   <p><%= label_tag(:number, "How many questions do you want in the quiz?", :id => "question") %></p>

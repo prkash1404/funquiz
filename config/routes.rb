@@ -30,8 +30,9 @@ Rails.application.routes.draw do
   post "choices/create"
   
   post "choices/destroy"
-
   
+  
+resources :sessions, only: [:new, :create, :destroy]  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
