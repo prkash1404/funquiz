@@ -45,11 +45,23 @@ class QuestionsControllerTest < ActionController::TestCase
     get :show, :id => @question.to_param
     assert_response :success
   end
+  
+  test "should redirect show when logged in as a non-admin" do
+    log_in_as(@other_user)
+    get :show, :id => @question.to_param
+    assert_redirected_to root_url
+  end
 
   test "should get edit" do
     log_in_as(@user)
     get :edit, :id => @question.to_param
     assert_response :success
+  end
+  
+  test "should redirect edit when logged in as a non-admin" do
+    log_in_as(@other_user)
+    get :edit, :id => @question.to_param
+    assert_redirected_to root_url
   end
 
   test "should update question" do
@@ -57,6 +69,15 @@ class QuestionsControllerTest < ActionController::TestCase
     put :update, :id => @question.to_param, :question => @question.attributes
     assert_redirected_to question_path(assigns(:question))
   end
+  
+  
+  test "should redirect update when logged in as a non-admin" do
+    log_in_as(@other_user)
+    put :update, :id => @question.to_param, :question => @question.attributes
+    assert_redirected_to root_url
+  end
+
+
 
   test "should destroy question" do
     log_in_as(@user)
@@ -65,6 +86,15 @@ class QuestionsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to questions_path
+  end
+  
+  test "should redirect destroy when logged in as a non-admin" do
+    log_in_as(@other_user)
+    assert_no_difference('Question.count', -1) do
+      delete :destroy, :id => @question.to_param
+    end
+
+    assert_redirected_to root_url
   end
 
 

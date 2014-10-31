@@ -15,17 +15,18 @@ class QuizController < ApplicationController
    session[:current] = 0
    session[:correct] = 0
    session[:begin_time]=Time.now
+   session[:end_time]=session[:begin_time]+1*60
    #puts {Time.now}
    redirect_to :action => "question"
   end
 
   def question
-    @begin_time=session[:begin_time]
-   @end_time= Time.now + 1.minutes
+    @begin_time=session[:begin_time].to_time
+   @end_time= session[:end_time].to_time
    @current = session[:current]
    @total   = session[:total]
    
-   if @current >= @total || (@end_time.to_i - @begin_time.to_i) <= (1.minutes).to_i
+   if @current >= @total || Time.now >= @end_time
     redirect_to :action => "end"
     return
    end
@@ -35,7 +36,11 @@ class QuizController < ApplicationController
    
    session[:question] = @question
    session[:choices] = @choices
+     
+     
      choiceid = params[:choice]
+     
+     
      @choice = choiceid ? Choice.find(choiceid) : nil
    if @choice and @choice.correct
     @correct = true
@@ -45,6 +50,7 @@ class QuizController < ApplicationController
    end
    
    session[:current] += 1
+   
   end
 
   def answer

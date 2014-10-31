@@ -7,7 +7,8 @@ class ChoiceTest < ActiveSupport::TestCase
   # end
   
   def setup
-    @choice=Choice.new(text: "x",correct: true,question_id: 1)
+    @choice=choices(:one)
+    @answer=choices
   end
   
   test "should be valid" do
@@ -19,10 +20,19 @@ class ChoiceTest < ActiveSupport::TestCase
     assert_not @choice.valid?
   end
 
- test "should require a Question_id" do
-    @choice.question_id = 1
-    assert @choice.valid?
+  test "should require a Question_id" do
+    @choice.question_id = nil
+    assert_not !@choice.valid?
   end
-
+  
+  test "should not too long" do
+    @choice.text = "a" * 51
+    assert_not @choice.valid?
+  end
+  
+  test "Answers should have correct option" do
+    
+    
+  end
   
 end

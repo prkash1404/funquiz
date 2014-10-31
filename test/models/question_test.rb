@@ -7,11 +7,7 @@ class QuestionTest < ActiveSupport::TestCase
   
   
   def setup
-    
-    
-    
-  
-    @question=Question.new(text: "Sachin is?")
+    @question=questions(:one)
   end
   
   test "should be valid" do

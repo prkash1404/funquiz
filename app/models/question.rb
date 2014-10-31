@@ -23,4 +23,6 @@ class Question < ActiveRecord::Base
     choice.correct = true
    end
   end
+  
+  
 end
