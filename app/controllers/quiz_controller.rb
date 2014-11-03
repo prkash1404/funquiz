@@ -7,7 +7,7 @@ class QuizController < ApplicationController
   
   def start
     #@begin_time = Time.now
-   total = params[:number].to_i
+   total = 10
    all = Question.all.map {|x| x.id}
    session[:questions] = all.sort_by{rand}[0..(total-1)]
    
@@ -15,13 +15,13 @@ class QuizController < ApplicationController
    session[:current] = 0
    session[:correct] = 0
    session[:begin_time]=Time.now
-   session[:end_time]=session[:begin_time]+1*60
+   session[:end_time]=session[:begin_time]+2*60
    #puts {Time.now}
    redirect_to :action => "question"
   end
 
   def question
-    @begin_time=session[:begin_time].to_time
+   @begin_time=session[:begin_time].to_time
    @end_time= session[:end_time].to_time
    @current = session[:current]
    @total   = session[:total]
