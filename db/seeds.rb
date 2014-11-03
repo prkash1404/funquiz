@@ -9,4 +9,5 @@ User.create!(name:  "Prakash",
              email: "prkash1404@gmail.com",
              password:              "prakash",
              password_confirmation: "prakash",
+             
              admin: true)

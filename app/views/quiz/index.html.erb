@@ -1,15 +1,16 @@
 <h1>Start Quiz</h1>
-<%= @begin_time%>
+<p>You Have Yearned <%= current_user.points%> Points </p>
+
+<p> Play More Quiz And Earn More Points</p>
 <%= form_tag({:controller => "quiz",
 				  :action => "start"}) do %>
-  
-  
   <div class="center">
 	 <%= submit_tag "Start!", :class => "submit"%>
   </div>
   <% if current_user.admin? %>
-     <%= link_to "Questions", questions_path %>
+     <%= link_to "Add Questions", questions_path %> 
   <% end %>
+  
 <% end %>
 
 <% content_for(:title) do %>
