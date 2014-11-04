@@ -20,7 +20,7 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @question }
+     # format.xml  { render :xml => @question }
     end
   end
 
@@ -31,7 +31,7 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @question }
+      #format.xml  { render :xml => @question }
     end
   end
 
@@ -64,7 +64,7 @@ class QuestionsController < ApplicationController
     respond_to do |format|
       if @question.update_attributes(question_params)
         format.html { redirect_to(@question , :alert => 'Question was successfully updated.') }
-        format.xml  { head :ok }
+        #format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @question.errors, :status => :unprocessable_entity }

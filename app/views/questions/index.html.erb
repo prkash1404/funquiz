@@ -16,13 +16,14 @@
   <tr>
     <td><%= question.text %></td>
     <td>
-      <ul>
+      <ul><% cache do %>
         <% question.choices.each do |choice| %>
           <li>
             <%= choice.text %>
             <% if choice.correct %> (Correct) <% end %>
           </li>
         <% end %>
+        <%end%>
       </ul>
     </td>
     <td><%= link_to 'Show', question %></td>

@@ -7,6 +7,7 @@ class QuizController < ApplicationController
   
   def start
    total = 10
+   
    all = Question.all.map {|x| x.id}
    session[:questions] = all.sort_by{rand}[0..(total-1)]
    session[:total]   = total

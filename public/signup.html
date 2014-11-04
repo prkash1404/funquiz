@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Funquiz</title>
+  <link data-turbolinks-track="true" href="/assets/choices.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/custom.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/questions.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/quiz.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/sessions.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/users.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/welcome.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/application.css?body=1" media="all" rel="stylesheet" />
+  <script data-turbolinks-track="true" src="/assets/jquery.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/jquery.countdowntimer.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/countdown.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/jquery_ujs.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/turbolinks.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/choices.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/questions.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/quiz.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/sessions.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/users.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/welcome.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/application.js?body=1"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="KwKRC8s+MTss2S2LbZ93hJ4cdy5I51BUrupq7ZZaETI=" name="csrf-token" />
+  
+</head>
+<body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <a href="/" id="logo">FunQuiz</a>
+    <nav>
+      <ul class="nav navbar-nav pull-right">
+        <li><a href="/">Home</a></li>
+        <li><a href="/signup">Help</a></li>
+          <li><a href="/login">Log in</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    <div class="container">
+      <h1>Sign up</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <form accept-charset="UTF-8" action="/users" class="new_user" id="new_user" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="KwKRC8s+MTss2S2LbZ93hJ4cdy5I51BUrupq7ZZaETI=" /></div>
+    
+      
+      <label for="user_name">Name</label>
+      <input class="form-control" id="user_name" name="user[name]" type="text" />
+
+      <label for="user_email">Email</label>
+      <input class="form-control" id="user_email" name="user[email]" type="text" />
+
+      <label for="user_password">Password</label>
+      <input class="form-control" id="user_password" name="user[password]" type="password" />
+
+      <label for="user_password_confirmation">Confirmation</label>
+      <input class="form-control" id="user_password_confirmation" name="user[password_confirmation]" type="password" />
+
+      <input class="btn btn-primary" name="commit" type="submit" value="Create my account" />
+</form>  </div>
+</div>
+    </div>
+  </body>
+</html>
