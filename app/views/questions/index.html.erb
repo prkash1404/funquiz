@@ -11,26 +11,26 @@
     <th></th>
     <th></th>
   </tr>
-
+<% cache do%>
 <% @questions.each do |question| %>
   <tr>
     <td><%= question.text %></td>
     <td>
-      <ul><% cache do %>
+      <ul>
         <% question.choices.each do |choice| %>
           <li>
             <%= choice.text %>
             <% if choice.correct %> (Correct) <% end %>
           </li>
         <% end %>
-        <%end%>
+        
       </ul>
     </td>
     <td><%= link_to 'Show', question %></td>
     <td><%= link_to 'Edit', edit_question_path(question) %></td>
     <td><%= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
-<% end %>
+<% end %><% end %>
 </table>
 
 

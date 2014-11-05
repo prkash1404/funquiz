@@ -1,8 +1,8 @@
 class QuestionsController < ApplicationController
-  
+  #before_filter :authendicate, only: [:index,:show]
   #before_action :logged_in_user, only: [:index, :show, :new, :edit, :create, :update, :destroy] 
   before_action :admin_user, only: [:index, :show, :new, :edit, :create, :update, :destroy]
-  
+  caches_action :new , :index
   def index
     @questions = Question.all
     @questions.sort {|a,b| a <=> b}
@@ -16,6 +16,7 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.xml
   def show
+    expire_action :action => :index
     @question = Question.find_by_id(params[:id])
 
     respond_to do |format|
@@ -27,6 +28,7 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   # GET /questions/new.xml
   def new
+    expire_action :action => :index
     @question = Question.new
 
     respond_to do |format|
@@ -37,12 +39,14 @@ class QuestionsController < ApplicationController
 
   # GET /questions/1/edit
   def edit
+    expire_action :action => :index
     @question = Question.find(params[:id])
   end
 
   # POST /questions
   # POST /questions.xml
   def create
+    expire_action :action => :index
     @question = Question.new(question_params)
 
     respond_to do |format|
@@ -59,6 +63,7 @@ class QuestionsController < ApplicationController
   # PUT /questions/1
   # PUT /questions/1.xml
   def update
+   expire_action :action => :index
     @question = Question.find(params[:id])
 
     respond_to do |format|
@@ -75,6 +80,7 @@ class QuestionsController < ApplicationController
   # DELETE /questions/1
   # DELETE /questions/1.xml
   def destroy
+    expire_action :action => :index
     @question = Question.find(params[:id])
     @question.destroy
 

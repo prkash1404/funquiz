@@ -11,7 +11,7 @@ module Funquiz
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-config.cache_store = :dalli_store 
+config.cache_store = :memory_store 
 #config.middleware.use Rack::Cache,
  # :verbose => true,
   #:metastore   => 'memcached://127.0.0.1:11211/meta',

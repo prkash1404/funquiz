@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Funquiz</title>
+  <link data-turbolinks-track="true" href="/assets/choices.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/custom.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/questions.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/quiz.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/sessions.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/users.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/welcome.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/application.css?body=1" media="all" rel="stylesheet" />
+  <script data-turbolinks-track="true" src="/assets/jquery.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/jquery.countdowntimer.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/countdown.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/jquery_ujs.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/turbolinks.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/choices.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/questions.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/quiz.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/sessions.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/users.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/welcome.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/application.js?body=1"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="TmmP3eO6VMOqPjXS64hhXCk2kloiLAAQ52HnpsxpWOg=" name="csrf-token" />
+  
+</head>
+<body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <a href="/" id="logo">FunQuiz</a>
+    <nav>
+      <ul class="nav navbar-nav pull-right">
+        <li><a href="/">Home</a></li>
+        <li><a href="/questions/new">Help</a></li>
+          <li> <a data-method="delete" href="/logout" rel="nofollow">Log out</a></li>
+         
+      </ul>
+    </nav>
+  </div>
+</header>
+    <div class="container">
+      <h1>New question</h1>
+
+<form accept-charset="UTF-8" action="/questions" class="new_question" id="new_question" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="TmmP3eO6VMOqPjXS64hhXCk2kloiLAAQ52HnpsxpWOg=" /></div>
+
+  <div class="field">
+    <label for="question_text">Text</label><br />
+    <textarea cols="50" id="question_text" name="question[text]" rows="3">
+</textarea>
+  </div>
+  
+  <div class="actions">
+    <input name="commit" type="submit" value="Create Question" />
+  </div>
+</form>
+
+<a href="/questions">Back</a>
+
+
+    </div>
+  </body>
+</html>
