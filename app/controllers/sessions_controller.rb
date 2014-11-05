@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
 skip_before_action :verify_authenticity_token
-caches_page :new
+#caches_page :new
   def new
   end
 

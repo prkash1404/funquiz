@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
- #skip_before_action :verify_authenticity_token
+ skip_before_action :verify_authenticity_token
+ #after_filter :authenticate, only: :home
   caches_action :home
   #caches_page :home
   def home  

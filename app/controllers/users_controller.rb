@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
- 
+ skip_before_action :verify_authenticity_token
   before_action :logged_in_user, only: [:show]
   caches_page :new
   
