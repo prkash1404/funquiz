@@ -3,19 +3,18 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
-gem 'countdown'
+
 gem 'bcrypt',               '3.1.7'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
+gem 'pg',             '0.17.1'
 gem 'actionpack-page_caching'
 gem 'actionpack-action_caching'
-gem 'dalli'
-gem 'rack-cache', :require => 'rack/cache'
+gem 'guard'
+gem 'rails-observers'
 gem 'jquery-countdown-rails', '~> 2.0.0'
 gem 'bootstrap-sass', '3.2.0.0'
-gem 'will_paginate',           '3.0.7'
-gem 'bootstrap-will_paginate', '0.0.10'
-# Use SCSS for stylesheets
+
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -32,15 +31,15 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
-
+# gem 'sqlite3', '1.3.9'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 group :development do
-  gem 'sqlite3', '1.3.9'
+# gem 'sqlite3', '1.3.9'
   gem 'spring',  '1.1.3'
 end
 
 group :production do
-  gem 'pg',             '0.17.1'
+  
   gem 'rails_12factor', '0.0.2'
   gem 'unicorn',        '4.8.3'
 end

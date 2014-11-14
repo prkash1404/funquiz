@@ -11,7 +11,7 @@
     <th></th>
     <th></th>
   </tr>
-<% cache do%>
+
 <% @questions.each do |question| %>
   <tr>
     <td><%= question.text %></td>
@@ -28,9 +28,10 @@
     </td>
     <td><%= link_to 'Show', question %></td>
     <td><%= link_to 'Edit', edit_question_path(question) %></td>
-    <td><%= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= button_to 'Destroy', question,  :method => :delete %></td>
   </tr>
-<% end %><% end %>
+<% end %>
+
 </table>
 
 
